@@ -77,9 +77,9 @@
                                 <echo message="unzip archive" />
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
                                 <echo message="moving resources" />
-                                <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/swfobject" />
-                                </move>
+                                <move file="${project.build.directory}/swfobject/swfobject.js" tofile="${destDir}/swfobject.min.js" />
+                                <move file="${project.build.directory}/swfobject/src/swfobject.js" tofile="${destDir}/swfobject.js" />
+                                <move file="${project.build.directory}/swfobject/expressInstall.swf" tofile="${destDir}/expressInstall.swf" />
                             </target>
                         </configuration>
                     </execution>
